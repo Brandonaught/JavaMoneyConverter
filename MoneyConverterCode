@@ -1,0 +1,99 @@
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main()
+
+{
+    int poundNotesAskedFor, crownCoinsAskedFor,
+        shillingCoinsAskedFor, sixPenceAskedFor, threePenceAskedFor,
+        pencesAskedFor, halfPencesAskedFor, farthingsAskedFor,
+        poundNotesGiven, crownCoinsGiven,
+        shillingCoinsGiven, sixPenceGiven, threePenceGiven,
+        pencesGiven, halfPencesGiven, farthingsGiven,change,
+        twentyPoundNote, tenPoundNote, fivePoundNote,
+        pounds, crown, shillings, sixPence,
+        threePence, pence, halfPence, farthing;
+    cout << "What was your purchase price? \n";
+    cout<< " Pound notes: ";
+    cin>>poundNotesAskedFor;
+    cout<< " Crown coins: ";
+    cin>>crownCoinsAskedFor;
+    cout<< " Shilling coins: ";
+    cin>>shillingCoinsAskedFor;
+    cout<< " Sixpence coins: ";
+    cin>>sixPenceAskedFor;
+    cout<< " Threepence coins: ";
+    cin>>threePenceAskedFor;
+    cout<< " Pence coins: ";
+    cin>>pencesAskedFor;
+    cout<< " Halfpence coins: ";
+    cin>>halfPencesAskedFor;
+    cout<< " Farthing coins: ";
+    cin>>farthingsAskedFor;
+    cout<< "How much did you give them? \n";
+    cout<< " Pound notes: ";
+    cin>>poundNotesGiven;
+    cout<< " Crown coins: ";
+    cin>>crownCoinsGiven;
+    cout<< " Shilling coins: ";
+    cin>>shillingCoinsGiven;
+    cout<< " Sixpence coins: ";
+    cin>>sixPenceGiven;
+    cout<< " Threepence coins: ";
+    cin>>threePenceGiven;
+    cout<< " Pence coins:  ";
+    cin>>pencesGiven;
+    cout<< " Halfpence coins:  ";
+    cin>>halfPencesGiven;
+    cout<< " Farthing coins: ";
+    cin>>farthingsGiven;
+    change =((poundNotesGiven*960)+(crownCoinsGiven*240)+(shillingCoinsGiven*48)+ (sixPenceGiven*24)+
+             (threePenceGiven*12)+(pencesGiven*4)+(halfPencesGiven*2)+(farthingsGiven*1))
+            -
+            ((poundNotesAskedFor*960)+(crownCoinsAskedFor*240)+(shillingCoinsAskedFor*48)+
+             (sixPenceAskedFor*24)+(threePenceAskedFor*12)+
+            (pencesAskedFor*4)+(halfPencesAskedFor*2)+(farthingsAskedFor*1));
+    cout<< " Your change will be UK$ "<<change/960<<endl
+        << " You will recieve: \n"<<endl;
+    twentyPoundNote = change / 19200;
+    change = change - (twentyPoundNote * 19200);
+    tenPoundNote = change / 9600;
+    change = change - (tenPoundNote * 9600);
+    fivePoundNote = change / 4800;
+    change = change - (fivePoundNote * 4800);
+    pounds = change / 960;
+    change = change - (pounds * 960);
+    crown = change / 240;
+    change = change - (crown * 240);
+    shillings = change / 48;
+    change = change -(shillings * 48);
+    sixPence = change / 24;
+    change = change - (sixPence *24);
+    threePence = change / 12;
+    change = change - (threePence * 12);
+    pence = change / 4;
+    change = change - (pence * 4);
+    halfPence = change / 2;
+    change = change - (halfPence * 2);
+    farthing = change / 1;
+    change = change - (farthing *1);
+    cout<<setfill('*')<<setw(28)<<'*'<<endl
+            <<setfill(' ')
+            <<'*'<<right<<setw(5)<<twentyPoundNote<<left<<setw(20)<<" Twenty Pound Notes"<<" *"<<endl
+            <<'*'<<right<<setw(5)<<tenPoundNote<<left<<setw(20)<<" Ten Pound Notes"<<" *"<<endl
+            <<'*'<<right<<setw(5)<<fivePoundNote<<left<<setw(20)<<" Five Pound Notes"<<" *"<<endl
+            <<'*'<<right<<setw(5)<<pounds<<left<<setw(20)<<" Pound Notes"<<" *"<<endl
+            <<'*'<<right<<setw(5)<<crown<<left<<setw(20)<<" Crown"<<" *"<<endl
+            <<'*'<<right<<setw(5)<<shillings<<left<<setw(20)<<" Shillings"<<" *"<<endl
+            <<'*'<<right<<setw(5)<<sixPence<<left<<setw(20)<<" Six Pences"<<" *"<<endl
+            <<'*'<<right<<setw(5)<<threePence<<left<<setw(20)<<" 3 Pences"<<" *"<<endl
+            <<'*'<<right<<setw(5)<<pence<<left<<setw(20)<<" Pences"<<" *"<<endl
+            <<'*'<<right<<setw(5)<<halfPence<<left<<setw(20)<<" Half Pences"<<" *"<<endl
+            <<'*'<<right<<setw(5)<<farthing<<left<<setw(20)<<" Farthings"<<" *"<<endl
+            <<setfill('*')<<setw(28)<<'*'<<endl;
+    return 0;
+}
+
